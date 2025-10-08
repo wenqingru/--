@@ -12,11 +12,4 @@ resp=requests.get(url,headers=headers)
 #设置编码
 resp.encoding="utf-8"
 #响应信息
-
-#保存
-
-e=etree.HTML(resp.text)
-info = e.xpath(//*[@id="immersive-translate-popup"])
-title = e.xpath('/html/body/div[@class="container"]//h1/text()') 
-print(title)
-print(info)
+print(resp.text)
