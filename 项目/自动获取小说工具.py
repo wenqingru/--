@@ -1,8 +1,7 @@
 #发送请求＆安装模块
 #pip install requests
 import requests
-#pip install lxml
-from lxml import etree
+
 #发送目标
 url="https://www.22biqu.com/biqu5669/5701978.html"
 #伪装自己
@@ -13,3 +12,4 @@ resp=requests.get(url,headers=headers)
 resp.encoding="utf-8"
 #响应信息
 print(resp.text)
+
