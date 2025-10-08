@@ -1,9 +1,22 @@
-#发送请求
+#发送请求＆安装模块
+#pip install requests
 import requests
-ur1="https://www.hen0.com/book/586367/121288178.html"
+#pip install lxml
+from lxml import etree
+#发送目标
+url="https://www.22biqu.com/biqu5669/5701978.html"
+#伪装自己
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0"}
-resp=requests.get(ur1,headers=headers)
+#发送请求
+resp=requests.get(url,headers=headers)
+#设置编码
 resp.encoding="utf-8"
 #响应信息
-print(resp.text)
+
 #保存
+
+e=etree.HTML(resp.text)
+info = e.xpath(//*[@id="immersive-translate-popup"])
+title = e.xpath('/html/body/div[@class="container"]//h1/text()') 
+print(title)
+print(info)
